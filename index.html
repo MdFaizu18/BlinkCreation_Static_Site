@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon-white.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Blink Creations - Innovative Solutions for your creative needs
+    </title>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const faviconLink = document.getElementById("favicon");
+
+        const updateFavicon = () => {
+          if (darkModeQuery.matches) {
+            // Set dark mode favicon
+            faviconLink.href = "/favicon-white.ico";
+          } else {
+            // Set light mode favicon
+            faviconLink.href = "/favicon-black.ico";
+          }
+        };
+
+        // Initial check
+        updateFavicon();
+
+        // Listen for changes in the color scheme preference
+        darkModeQuery.addEventListener("change", updateFavicon);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
