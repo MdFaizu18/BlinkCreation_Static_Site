@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/home";
-
 import NotFound from "./layouts/error/NotFound";
 
 const router = createBrowserRouter([
