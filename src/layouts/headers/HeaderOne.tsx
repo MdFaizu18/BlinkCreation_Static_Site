@@ -13,12 +13,12 @@ export default function HeaderOne() {
     <>
       <header className={`main-header ${sticky ? "fixed-header" : ""}`}>
         <div className="header-upper">
-          <div className=" mx-12">
+          <div className=" mx-4">
             <div className="header-inner">
               <div className="flex justify-center align-items-center">
                 <div className="">
                   <Link to="/">
-                    <div className="flex justify-center align-items-center">
+                    <div className="">
                       {/* <div className="">
                         <img src={Logo} alt="" height={150} width={250} />
                       </div> */}

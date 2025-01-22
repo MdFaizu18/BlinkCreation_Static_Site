@@ -1,11 +1,13 @@
 const TopFooterLayer = () => {
   return (
     <div>
-      <div className="footer-top">
-        <h2 className="text-white">Stay Connected</h2>
+      <div className="pt-24 pb-24 bg-black ">
+        <h2 className="text-[150px] leading-none cursor-pointer font-medium uppercase text-center text-main-color">
+          Let's Connect
+        </h2>
         <br />
-        <p className="text-white">
-          Let’s turn your ideas into reality—connect with us today!
+        <p className="text-lg text-center text-main-color">
+          We turn your ideas into reality—connect with us today!
         </p>
       </div>
     </div>

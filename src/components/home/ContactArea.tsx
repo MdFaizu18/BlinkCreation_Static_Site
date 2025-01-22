@@ -1,207 +1,190 @@
-import { useState } from "react";
+"use client"
 
-export default function ContactArea() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+import type React from "react"
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { Send, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react"
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    // Add form submission logic here
-    console.log("Form submitted:", { name, email, subject, message });
-  };
+const services = ["Web Development", "Graphic Design", "Digital Marketing", "Video Editing", "Content Writing","Student Consultancy","Need to Consult"]
+
+export default function CreativeContactForm() {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [selectedService, setSelectedService] = useState("")
+  const [message, setMessage] = useState("")
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log("Form submitted:", { name, email, selectedService, message })
+    // Add your form submission logic here
+  }
 
   return (
-    <>
-      <section id="contact" className="contact-area">
-        <div className="container px-16">
-          <div className="row">
-            <div className="col-xl-12 col-lg-12">
-              <div className="section-title section-black-title wow fadeInUp delay-0-2s">
-                <h2>Contact Me</h2>
+    <section className="min-h-screen bg-[#F4F3EE] text-black flex items-center justify-center p-4">
+      <div className="container mx-28">
+        <motion.h1
+          className="text-6xl font-medium mb-12  text-black uppercase"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Get in Touch
+        </motion.h1>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <motion.div
+            className="lg:col-span-1 space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="flex items-center space-x-4">
+              <Phone className="w-8 h-8" />
+              <div>
+                <h2 className="text-xl font-semibold text-black">Phone</h2>
+                <p>+91 6383108327</p>
+                <p>+91 9345266656</p>
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="contact-content-part  wow fadeInUp delay-0-2s">
-                {/* <div
-                  className="single-contact wow fadeInUp"
-                  data-wow-delay=".2s"
-                >
-                  <span className="circle-btn">
-                    <i className="ri-map-pin-line"></i>
-                  </span>
-                  <h2>our office:</h2>
-                  <p>Jurain,Dhaka Bangladesh</p>
-                </div> */}
-
-                <div
-                  className="single-contact wow fadeInUp"
-                  data-wow-delay=".4s"
-                >
-                  <span className="circle-btn">
-                    <i className="ri-headphone-line"></i>
-                  </span>
-                  <h2>contact number:</h2>
-                  <p>+91 6383108327</p>
-                  <p>+91 9345266656</p>
-                </div>
-
-                <div
-                  className="single-contact wow fadeInUp"
-                  data-wow-delay=".6s"
-                >
-                  <span className="circle-btn">
-                    <i className="ri-mail-line"></i>
-                  </span>
-                  <h2>Email us:</h2>
-                  <p>blinkcreationsofficial@gmail.com</p>
-                </div>
-
-                <div
-                  className="single-contact wow fadeInUp"
-                  data-wow-delay=".6s"
-                >
-                  <h2>Socials</h2>
-                  <div className="about-social">
-                    <ul>
-                      <li>
-                        <a target="_blank" href="https://facebook.com">
-                          <i className="ri-facebook-circle-fill"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a target="_blank" href="https://twitter.com">
-                          <i className="ri-twitter-x-line"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a target="_blank" href="https://linkedin.com">
-                          <i className="ri-linkedin-fill"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          target="_blank"
-                          href="https://github.com/jamilrayhan10"
-                        >
-                          <i className="ri-github-line"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+            <div className="flex items-center space-x-4">
+              <Mail className="w-8 h-8" />
+              <div>
+                <h2 className="text-xl font-semibold text-black">Email</h2>
+                <p>blinkcreationsofficial@gmail.com</p>
               </div>
             </div>
-
-            <div className="col-lg-8">
-              <div className="contact-form contact-form-area wow fadeInUp delay-0-4s">
-                <form
-                  id="contactForm"
-                  className="contact-form"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <label htmlFor="name">Full Name</label>
-                        <input
-                          type="text"
-                          id="name"
-                          className="form-control"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          placeholder="Steve Milner"
-                          required
-                          data-error="Please enter your Name"
-                        />
-                        <label htmlFor="name" className="for-icon">
-                          <i className="far fa-user"></i>
-                        </label>
-                        <div className="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <label htmlFor="email">Email Address</label>
-                        <input
-                          type="email"
-                          id="email"
-                          className="form-control"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="hello@websitename.com"
-                          required
-                          data-error="Please enter your Email"
-                        />
-                        <label htmlFor="email" className="for-icon">
-                          <i className="far fa-envelope"></i>
-                        </label>
-                        <div className="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <label htmlFor="subject">Subject</label>
-                        <input
-                          type="text"
-                          id="subject"
-                          className="form-control"
-                          value={subject}
-                          onChange={(e) => setSubject(e.target.value)}
-                          placeholder="Your Subject"
-                          required
-                          data-error="Please enter your Subject"
-                        />
-                        <label htmlFor="subject" className="for-icon">
-                          <i className="far fa-user"></i>
-                        </label>
-                        <div className="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        <label htmlFor="message">Your Message</label>
-                        <textarea
-                          name="message"
-                          id="message"
-                          className="form-control"
-                          rows={4}
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
-                          placeholder="Write Your message"
-                          required
-                          data-error="Please Write your Message"
-                        ></textarea>
-                        <div className="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="form-group mb-0">
-                        <button type="submit" className="theme-btn">
-                          Send Me Message <i className="ri-mail-line"></i>
-                        </button>
-                        <div id="msgSubmit" className="hidden"></div>
-                      </div>
-                    </div>
-                    <div className="col-md-12 text-center">
-                      <p className="input-success">
-                        We have received your mail, We will get back to you
-                        soon!
-                      </p>
-                      <p className="input-error">
-                        Sorry, Message could not send! Please try again.
-                      </p>
-                    </div>
-                  </div>
-                </form>
+            <div className="flex items-center space-x-4">
+              <MapPin className="w-8 h-8" />
+              <div>
+                <h2 className="text-xl font-semibold text-black">Address</h2>
+                <p>Tamil Nadu - 636 001</p>
               </div>
             </div>
-          </div>
+            <div>
+              <h2 className="text-xl font-semibold mb-4 text-black">Connect with Us</h2>
+              <div className="flex space-x-4">
+                <motion.a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Facebook className="w-6 h-6" />
+                </motion.a>
+                <motion.a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Twitter className="w-6 h-6" />
+                </motion.a>
+                <motion.a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Linkedin className="w-6 h-6" />
+                </motion.a>
+                <motion.a
+                  href="https://github.com/jamilrayhan10"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Github className="w-6 h-6" />
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            className="lg:col-span-2"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-2 bg-white bg-opacity-10 border-spacing-0 border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200"
+                    placeholder="John Doe"
+                    required
+                  />
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                     className="w-full px-4 py-2 bg-white bg-opacity-10 border-spacing-0 border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </motion.div>
+              </div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <label htmlFor="service" className="block text-sm font-medium mb-2">
+                  Service Required
+                </label>
+                <select
+                  id="service"
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
+                  className="w-full px-4 py-2 bg-white bg-opacity-10 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200 appearance-none"
+                  required
+                >
+                  <option value="">- Select a service -</option>
+                  {services.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
+                </select>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  rows={4}
+                  className="w-full px-4 py-2 bg-white bg-opacity-10 border border-black border-spacing-0 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200 resize-none"
+                  placeholder="Tell us about your project..."
+                  required
+                ></textarea>
+              </motion.div>
+              <motion.button
+                type="submit"
+                className="w-full bg-white text-black font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition duration-200 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Send Message
+                <Send className="ml-2 h-5 w-5" />
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
-      </section>
-    </>
-  );
+      </div>
+    </section>
+  )
 }
+

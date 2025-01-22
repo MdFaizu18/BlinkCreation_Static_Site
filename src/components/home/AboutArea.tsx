@@ -16,8 +16,8 @@ export default function AboutArea() {
             />
           </div>
           <div className="order-1 lg:order-2">
-            <span className="text-white- font-medium mb-4 block">
-              About Our Company
+           <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-gray-100 text-gray-900">
+              - ABOUT OUR COMPANY -
             </span>
             <h1
               className="text-4xl md:text-5xl font-medium mb-6 uppercase"

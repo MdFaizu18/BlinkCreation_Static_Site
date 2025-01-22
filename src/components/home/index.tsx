@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import HeroArea from "./HeroArea";
 import ServiceArea from "./ServiceArea";
 import ContactArea from "./ContactArea";
@@ -9,30 +11,24 @@ import ScrollToTop from "../common/ScrollToTop";
 import TopFooterLayer from "../../layouts/footers/TopFooterLayer";
 import ReachUsOut from "./ReachUsOut";
 import AboutArea from "./AboutArea";
-
+import StudentLayer from "./StudentLayer";
 
 export default function Home() {
   return (
     <>
       <HeaderOne />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <main>
-            <HeroArea />
-            <AboutArea />
-            <ReachUsOut/>
-            {/* <TestimonoalArea /> */}
-            <ServiceArea />
-            {/* <BrandArea /> */}
-            {/* <AboutArea /> */}
-            {/* <PortfolioArea /> */}
-            <ContactArea />
-            {/* <BlogSection/> */}
-            <TopFooterLayer />
-          </main>
-          <FooterOne />
-        </div>
-      </div>
+
+      <main>
+        <HeroArea />
+        <AboutArea />
+        <ReachUsOut />
+        <ServiceArea />
+        <StudentLayer />
+        <TopFooterLayer />
+        <ContactArea />
+      </main>
+      <FooterOne />
+
       <ScrollToTop />
       <ScrollTop />
       <CustomCursor />

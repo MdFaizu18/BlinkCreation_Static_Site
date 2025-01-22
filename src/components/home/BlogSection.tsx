@@ -1,31 +1,34 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { User } from "lucide-react"
+import { motion } from "framer-motion";
+import { User } from "lucide-react";
 
 const blogPosts = [
   {
     category: "Website",
     title: "Business Provider Of Software Development Services.",
-    description: "Lorem ipsum dolor sit amet consectetur. Non tellus euismod platea cras. Risus ac mauris et facilisi.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Non tellus euismod platea cras. Risus ac mauris et facilisi.",
     author: "admin",
     date: "July 2, 2024",
   },
   {
     category: "UI/UX",
     title: "UI/UX Provider Of Software Development Services.",
-    description: "Lorem ipsum dolor sit amet consectetur. Non tellus euismod platea cras. Risus ac mauris et facilisi.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Non tellus euismod platea cras. Risus ac mauris et facilisi.",
     author: "admin",
     date: "July 2, 2024",
   },
   {
     category: "IT Consultancy",
     title: "IT Consultancy Provider Of Software Development Services.",
-    description: "Lorem ipsum dolor sit amet consectetur. Non tellus euismod platea cras. Risus ac mauris et facilisi.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Non tellus euismod platea cras. Risus ac mauris et facilisi.",
     author: "admin",
     date: "July 2, 2024",
   },
-]
+];
 
 export default function BlogSection() {
   return (
@@ -73,7 +76,9 @@ export default function BlogSection() {
               <span className="inline-block px-4 py-2 rounded-lg bg-[#FFC107] text-black font-medium text-sm mb-4">
                 {post.category}
               </span>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">{post.title}</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">
+                {post.title}
+              </h3>
               <p className="text-gray-600 mb-6">{post.description}</p>
               <div className="flex items-center text-gray-500 text-sm">
                 <User className="w-4 h-4 mr-2" />
@@ -97,6 +102,5 @@ export default function BlogSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

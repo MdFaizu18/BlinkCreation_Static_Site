@@ -21,6 +21,14 @@
 html {
   scroll-behavior: smooth;
 }
+#smooth-wrapper {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#smooth-content {
+  will-change: transform;
+}
 /* for hero content  */
 
 /* navbar styles  */

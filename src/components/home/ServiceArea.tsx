@@ -1,22 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   Code,
   Palette,
   Video,
   Megaphone,
-  GraduationCap,
   Globe,
+  ArrowUpRight,
 } from "lucide-react";
+
+import { motion } from "framer-motion";
 
 const services = [
   {
     id: 1,
     title: "Web Development",
-    icon: <Globe className="w-8 h-8" />,
+    icon: <Globe className="w-8 h-8 text-black" />,
     description:
       "Creating stunning websites tailored to your needs, including static, dynamic, and e-commerce solutions.",
     color: "from-blue-500 to-cyan-500",
@@ -24,7 +23,7 @@ const services = [
   {
     id: 2,
     title: "Landing Page Re-creation",
-    icon: <Code className="w-8 h-8" />,
+    icon: <Code className="w-8 h-8 text-black" />,
     description:
       "Revamp your landing pages with a fresh, engaging design that converts visitors into loyal customers.",
     color: "from-purple-500 to-pink-500",
@@ -32,7 +31,7 @@ const services = [
   {
     id: 3,
     title: "Digital Marketing",
-    icon: <Megaphone className="w-8 h-8" />,
+    icon: <Megaphone className="w-8 h-8 text-black" />,
     description:
       "From social media management to SEO, SEM, influencer marketing, and personal branding.",
     color: "from-green-500 to-teal-500",
@@ -40,7 +39,7 @@ const services = [
   {
     id: 4,
     title: "Video Creation",
-    icon: <Video className="w-8 h-8" />,
+    icon: <Video className="w-8 h-8 text-black" />,
     description:
       "Enhance your brand with high-quality video edits, from reels and YouTube videos to promotional content.",
     color: "from-red-500 to-orange-500",
@@ -48,40 +47,67 @@ const services = [
   {
     id: 5,
     title: "Graphic Design",
-    icon: <Palette className="w-8 h-8" />,
+    icon: <Palette className="w-8 h-8 text-black" />,
     description:
       "We create impactful designs, including illustrations, brochures, posters, logos, and catalogs.",
     color: "from-yellow-500 to-amber-500",
   },
-  {
-    id: 6,
-    title: "Student Services",
-    icon: <GraduationCap className="w-8 h-8" />,
-    description:
-      "Empowering students with resume building, project creation, portfolio creation, and interview preparation.",
-    color: "from-indigo-500 to-violet-500",
-  },
 ];
 
 export default function ServiceArea() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
   return (
-    <section
-      id="services"
-      className="pb-24 mx-24 bg-black text-white overflow-hidden"
-    >
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Our Services
-        </motion.h2>
+    <section className="py-20 px-4 md:px-8 bg-black" id="service">
+      <div className="max-w-7xl mx-auto">
+        {/* Title and First Box Row */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16 items-center">
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-900">
+              - WHAT DO WE OFFER? -
+            </span>
+            <h2
+              className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase text-white"
+              style={{ lineHeight: "1.2" }}
+            >
+              Services Designed to Elevate Your Brand
+            </h2>
+            <p className="text-gray-300 max-w-2xl">
+              From stunning web designs to impactful video edits, we bring your
+              ideas to life with innovation and expertise.
+            </p>
+          </motion.div>
+
+          {/* First Service Box */}
+          <motion.div
+            className={`relative group rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] bg-gradient-to-r ${services[0].color}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6">
+              {services[0].icon}
+            </div>
+            <h3 className="text-xl font-medium uppercase text-white mb-4">
+              {services[0].title}
+            </h3>
+            <p className="text-white">{services[0].description}</p>
+            {/* Hover Arrow */}
+            <a
+              href="/service"
+              className="absolute top-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 ease-in-out"
+            >
+              <ArrowUpRight className="w-6 h-6" />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Remaining Service Boxes Row */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
           initial="hidden"
           animate="visible"
           variants={{
@@ -89,61 +115,34 @@ export default function ServiceArea() {
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.2, // Adds delay between each child animation
+                staggerChildren: 0.1,
               },
             },
           }}
         >
-          {services.map((service) => (
+          {services.slice(1).map((service) => (
             <motion.div
               key={service.id}
-              className={`relative overflow-hidden rounded-2xl p-6 cursor-pointer transition-all duration-300 ease-in-out
-                         bg-white text-black hover:bg-gradient-to-br ${service.color} hover:text-white`}
-              onMouseEnter={() => setHoveredId(service.id)}
-              onMouseLeave={() => setHoveredId(null)}
+              className={`relative group rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] bg-gradient-to-r ${service.color}`}
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              whileHover={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 500, damping: 15 }}
-              style={{
-                transition: "background-color 4s ease",
-              }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div
-                  className={`p-3 rounded-full ${
-                    hoveredId === service.id
-                      ? "bg-white text-black"
-                      : "bg-black text-white"
-                  }`}
-                >
-                  {service.icon}
-                </div>
-                <span className="text-3xl font-bold opacity-50">
-                  0{service.id}
-                </span>
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6">
+                {service.icon}
               </div>
-              <h3
-                className={`text-2xl font-semibold mb-3 ${
-                  hoveredId === service.id ? "text-white" : "text-black"
-                }`}
-              >
+              <h3 className="text-xl font-medium uppercase text-white mb-4">
                 {service.title}
               </h3>
-              <p className="text-sm opacity-80 mb-4">{service.description}</p>
-              <motion.div
-                className="absolute bottom-4 right-4"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{
-                  opacity: hoveredId === service.id ? 1 : 0,
-                  scale: hoveredId === service.id ? 1 : 0,
-                }}
-                transition={{ duration: 0.4 }}
+              <p className="text-white">{service.description}</p>
+              {/* Hover Arrow */}
+              <a
+                href="/service"
+                className="absolute top-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all duration-300 ease-in-out"
               >
                 <ArrowUpRight className="w-6 h-6" />
-              </motion.div>
+              </a>
             </motion.div>
           ))}
         </motion.div>
