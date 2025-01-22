@@ -1,7 +1,5 @@
 import HeroArea from "./HeroArea";
 import ServiceArea from "./ServiceArea";
-import TestimonoalArea from "./TestimonoalArea";
-import BlogArea from "./AboutArea";
 import ContactArea from "./ContactArea";
 import HeaderOne from "../../layouts/headers/HeaderOne";
 import FooterOne from "../../layouts/footers/FooterOne";
@@ -11,7 +9,7 @@ import ScrollToTop from "../common/ScrollToTop";
 import TopFooterLayer from "../../layouts/footers/TopFooterLayer";
 import ReachUsOut from "./ReachUsOut";
 import AboutArea from "./AboutArea";
-import BlogSection from "./BlogSection";
+
 
 export default function Home() {
   return (
