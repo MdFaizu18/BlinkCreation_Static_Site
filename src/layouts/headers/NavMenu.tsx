@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import menu_data from "./menu_data";
 
 export default function NavMenu() {
-
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     link: string,

@@ -1,104 +1,153 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowUpRight,
+  Code,
+  Palette,
+  Video,
+  Megaphone,
+  GraduationCap,
+  Globe,
+} from "lucide-react";
+
+const services = [
+  {
+    id: 1,
+    title: "Web Development",
+    icon: <Globe className="w-8 h-8" />,
+    description:
+      "Creating stunning websites tailored to your needs, including static, dynamic, and e-commerce solutions.",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 2,
+    title: "Landing Page Re-creation",
+    icon: <Code className="w-8 h-8" />,
+    description:
+      "Revamp your landing pages with a fresh, engaging design that converts visitors into loyal customers.",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    id: 3,
+    title: "Digital Marketing",
+    icon: <Megaphone className="w-8 h-8" />,
+    description:
+      "From social media management to SEO, SEM, influencer marketing, and personal branding.",
+    color: "from-green-500 to-teal-500",
+  },
+  {
+    id: 4,
+    title: "Video Creation",
+    icon: <Video className="w-8 h-8" />,
+    description:
+      "Enhance your brand with high-quality video edits, from reels and YouTube videos to promotional content.",
+    color: "from-red-500 to-orange-500",
+  },
+  {
+    id: 5,
+    title: "Graphic Design",
+    icon: <Palette className="w-8 h-8" />,
+    description:
+      "We create impactful designs, including illustrations, brochures, posters, logos, and catalogs.",
+    color: "from-yellow-500 to-amber-500",
+  },
+  {
+    id: 6,
+    title: "Student Services",
+    icon: <GraduationCap className="w-8 h-8" />,
+    description:
+      "Empowering students with resume building, project creation, portfolio creation, and interview preparation.",
+    color: "from-indigo-500 to-violet-500",
+  },
+];
+
 export default function ServiceArea() {
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
   return (
-    <>
-      <section
-        id="service"
-        className=" pt-24 px-4 md:px-8 lg:px-16  bg-[#070707]"
-      >
-        <div className="container px-16">
-          <div className="row">
-            <div className="col-xl-12 col-lg-12">
-              <div className="section-title text-white wow fadeInUp delay-0-2s">
-                <h2>Our Services</h2>
+    <section
+      id="services"
+      className="pb-24 mx-24 bg-black text-white overflow-hidden"
+    >
+      <div className="container mx-auto px-4">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Our Services
+        </motion.h2>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2, // Adds delay between each child animation
+              },
+            },
+          }}
+        >
+          {services.map((service) => (
+            <motion.div
+              key={service.id}
+              className={`relative overflow-hidden rounded-2xl p-6 cursor-pointer transition-all duration-300 ease-in-out
+                         bg-white text-black hover:bg-gradient-to-br ${service.color} hover:text-white`}
+              onMouseEnter={() => setHoveredId(service.id)}
+              onMouseLeave={() => setHoveredId(null)}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 500, damping: 15 }}
+              style={{
+                transition: "background-color 4s ease",
+              }}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div
+                  className={`p-3 rounded-full ${
+                    hoveredId === service.id
+                      ? "bg-white text-black"
+                      : "bg-black text-white"
+                  }`}
+                >
+                  {service.icon}
+                </div>
+                <span className="text-3xl font-bold opacity-50">
+                  0{service.id}
+                </span>
               </div>
-            </div>
-          </div>
-          <div className="row">
-            {/* Website Creation */}
-            <div className="col-lg-8 col-md-7">
-              <div className="service-item wow fadeInUp delay-0-2s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>01</h5>
-                <h4>Web Development</h4>
-                <p>
-                  Creating stunning websites tailored to your needs, including
-                  static, dynamic, and e-commerce solutions. From development to
-                  managing and maintaining, we've got you covered.
-                </p>
-              </div>
-            </div>
-
-            {/* Landing Page */}
-            <div className="col-lg-4 col-md-5">
-              <div className="service-item wow fadeInUp delay-0-4s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>02</h5>
-                <h4>Landing Page Re-creation</h4>
-                <p>
-                  Revamp your landing pages with a fresh, engaging design that
-                  converts visitors into loyal customers.
-                </p>
-              </div>
-            </div>
-
-            {/* Digital Marketing */}
-            <div className="col-lg-4 col-md-5">
-              <div className="service-item wow fadeInUp delay-0-6s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>03</h5>
-                <h4>Digital Marketing</h4>
-                <p>
-                  From social media management to SEO, SEM, influencer
-                  marketing, and personal branding, we help you amplify your
-                  digital presence and drive results.
-                </p>
-              </div>
-            </div>
-
-            {/* Video Creation */}
-            <div className="col-lg-8 col-md-7">
-              <div className="service-item wow fadeInUp delay-0-8s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>04</h5>
-                <h4>Video Creation</h4>
-                <p>
-                  Enhance your brand with high-quality video edits, from reels
-                  and YouTube videos to promotional content, 2D/3D VFX, and
-                  captivating thumbnails.
-                </p>
-              </div>
-            </div>
-
-            {/* Design Services */}
-            <div className="col-lg-8 col-md-7">
-              <div className="service-item wow fadeInUp delay-1s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>05</h5>
-                <h4>Graphic Design</h4>
-                <p>
-                  We create impactful designs, including illustrations,
-                  brochures, posters, logos, event proposals, catalogs, and
-                  2D/3D designs that leave a lasting impression.
-                </p>
-              </div>
-            </div>
-
-            {/* Student Hubs */}
-            <div className="col-lg-4 col-md-5">
-              <div className="service-item wow fadeInUp delay-1-2s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>06</h5>
-                <h4>Student Services</h4>
-                <p>
-                  Empowering students with resume building, project creation
-                  (mini and final) with documentation, portfolio creation, and
-                  interview preparation services.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+              <h3
+                className={`text-2xl font-semibold mb-3 ${
+                  hoveredId === service.id ? "text-white" : "text-black"
+                }`}
+              >
+                {service.title}
+              </h3>
+              <p className="text-sm opacity-80 mb-4">{service.description}</p>
+              <motion.div
+                className="absolute bottom-4 right-4"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{
+                  opacity: hoveredId === service.id ? 1 : 0,
+                  scale: hoveredId === service.id ? 1 : 0,
+                }}
+                transition={{ duration: 0.4 }}
+              >
+                <ArrowUpRight className="w-6 h-6" />
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }

@@ -1,134 +1,77 @@
-import { Facebook, Twitter, Instagram } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Instagram, Linkedin } from "lucide-react";
+import LogoWord from "../../assests/logo/logo-word-black.png";
+import Logo from "../../assests/logo/logo-black.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F4F3EE] pt-16 pb-8">
+    <footer className="bg-[#F4F3EE] py-12">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Services Column */}
+        {/* Services and Branding Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 mb-8">
+          {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-black">Services</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl font-bold mb-4 text-black">Services</h3>
+            <ul className="space-y-2">
               {[
                 "Web Development",
                 "SEO Optimization",
                 "Digital Marketing",
                 "Product Design",
-                "Logo Design",
-                "Content Writing",
               ].map((service) => (
-                <li key={service}>
-                  <Link
-                    to="#service"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    {service}
-                  </Link>
+                <li key={service} className="text-gray-600 hover:text-black transition-colors">
+                  {service}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Links Column */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-black">Links</h3>
-            <ul className="space-y-4">
-              {[
-                "About Agency",
-                "Latest News & Blog",
-                "Meet The Team",
-                "Popular Services",
-                "Testimonials",
-                "Need a Career?",
-              ].map((link) => (
-                <li key={link}>
-                  <Link
-                    to="#"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Follow Column */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-black">Follow</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  to="#"
-                  className="text-gray-600 hover:text-black transition-colors inline-flex items-center gap-2"
-                >
-                  <Instagram className="w-5 h-5" /> Instagram
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#"
-                  className="text-gray-600 hover:text-black transition-colors inline-flex items-center gap-2"
-                >
-                  <Twitter className="w-5 h-5" /> Twitter
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#"
-                  className="text-gray-600 hover:text-black transition-colors inline-flex items-center gap-2"
-                >
-                  <Facebook className="w-5 h-5" /> Facebook
-                </Link>
-              </li>
-            </ul>
-          </div>
-          {/* Newsletter Column */}
-          {/* <div>
-            <h3 className="text-xl font-bold mb-6">Subscribe Our Newsletter</h3>
-            <p className="text-gray-600 mb-6">
-              Natus errorsit voluptatem accusa dolore mque quae abillo inventore verita achitec beatae vitae dicta sunt
-              explicabo.
-            </p>
-            <form className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="flex-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-              />
-              <button
-                type="submit"
-                className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+          {/* Branding */}
+          <div className="flex flex-col items-center">
+            <img src={Logo} alt="Logo" className="h-[80px]" />
+            <img src={LogoWord} alt="Brand Name" className="mt-2" />
+            <div className="flex gap-4 mt-4">
+              <a
+                href="https://linkedin.com" // Replace with your LinkedIn profile
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-black transition-colors"
               >
-                Sign Up
-              </button>
-            </form>
-          </div> */}
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://instagram.com" // Replace with your Instagram profile
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-black transition-colors"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-
-        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-300 pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-600 text-sm">
-            © {new Date().getFullYear()}. A Blink Creations Portfolio
+            © {new Date().getFullYear()} Blink Creations. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link
-              to="/terms"
+            <a
+              href="/terms"
               className="text-gray-600 hover:text-black transition-colors text-sm"
             >
               Terms & Conditions
-            </Link>
-            <Link
-              to="/policy"
+            </a>
+            <a
+              href="/policy"
               className="text-gray-600 hover:text-black transition-colors text-sm"
             >
               Privacy Policy
-            </Link>
+            </a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+  
