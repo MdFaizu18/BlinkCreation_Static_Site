@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 import HeroArea from "./HeroArea";
 import ServiceArea from "./ServiceArea";

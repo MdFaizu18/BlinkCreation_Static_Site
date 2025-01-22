@@ -9,16 +9,6 @@ export default function StudentLayer() {
   const controls = useAnimation();
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute("href");
-    const targetId = href ? href.substring(1) : "";
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
