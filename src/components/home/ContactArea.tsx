@@ -8,10 +8,7 @@ import {
   Phone,
   Mail,
   MapPin,
-  Facebook,
-  Twitter,
   Linkedin,
-  Github,
 } from "lucide-react";
 import { Instagram } from "lucide-react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
