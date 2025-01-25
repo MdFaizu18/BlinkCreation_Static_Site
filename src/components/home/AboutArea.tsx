@@ -16,22 +16,18 @@ export default function AboutArea() {
             />
           </div>
           <div className="order-1 lg:order-2">
-           <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-gray-100 text-gray-900">
+            <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-gray-100 text-gray-900">
               - ABOUT OUR COMPANY -
             </span>
             <h1
               className="text-4xl md:text-5xl font-medium mb-6 uppercase"
               style={{ lineHeight: "1.3" }}
             >
-              Exceptional Solutions for Your Every Need
+              Who We Are
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
-              At our core, we are committed to delivering comprehensive and
-              innovative solutions tailored to your unique needs.We provide a
-              one-stop destination for all your professional and personal
-              requirements. Let us transform your vision into reality with
-              reliable, dynamic, and impactful solutions.
+              At Blink Creations, we are dedicated to crafting innovative solutions tailored to your unique needs. As a one-stop destination for all your digital and creative services, our mission is to turn your dreams into reality with dynamic, reliable, and impactful solutions. Our team of experts is committed to delivering exceptional results that exceed your expectations.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center p-8  rounded-lg hover:shadow-lg transition-shadow">

@@ -1,26 +1,47 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Send, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react"
-
-const services = ["Web Development", "Graphic Design", "Digital Marketing", "Video Editing", "Content Writing","Student Consultancy","Need to Consult"]
+import type React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Send,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Github,
+} from "lucide-react";
+import { Instagram } from "lucide-react";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+const services = [
+  "Web Development",
+  "Graphic Design",
+  "Digital Marketing",
+  "Video Editing",
+  "Content Writing",
+  "Student Consultancy",
+  "Need to Consult",
+];
 
 export default function CreativeContactForm() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [selectedService, setSelectedService] = useState("")
-  const [message, setMessage] = useState("")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [selectedService, setSelectedService] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", { name, email, selectedService, message })
+    e.preventDefault();
+    console.log("Form submitted:", { name, email, selectedService, message });
     // Add your form submission logic here
-  }
+  };
 
   return (
-    <section id="contact" className="min-h-screen bg-[#F4F3EE] text-black flex items-center justify-center p-4">
+    <section
+      id="contact"
+      className="min-h-screen bg-[#F4F3EE] text-black flex items-center justify-center p-4"
+    >
       <div className="container mx-28">
         <motion.h1
           className="text-6xl font-medium mb-12  text-black uppercase"
@@ -60,26 +81,10 @@ export default function CreativeContactForm() {
               </div>
             </div>
             <div>
-              <h2 className="text-xl font-semibold mb-4 text-black">Connect with Us</h2>
-              <div className="flex space-x-4">
-                <motion.a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Facebook className="w-6 h-6" />
-                </motion.a>
-                <motion.a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Twitter className="w-6 h-6" />
-                </motion.a>
+              <h2 className="text-xl font-semibold mb-4 text-black">
+                Connect with Us
+              </h2>
+              <div className="flex space-x-4">        
                 <motion.a
                   href="https://linkedin.com"
                   target="_blank"
@@ -90,14 +95,23 @@ export default function CreativeContactForm() {
                   <Linkedin className="w-6 h-6" />
                 </motion.a>
                 <motion.a
-                  href="https://github.com/jamilrayhan10"
+                 href="https://instagram.com" 
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Github className="w-6 h-6" />
+                  <Instagram className="w-6 h-6" />
                 </motion.a>
+                <motion.a
+                 href="https://instagram.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <WhatsAppIcon className="w-6 h-6" />
+                </motion.a>           
               </div>
             </div>
           </motion.div>
@@ -109,8 +123,14 @@ export default function CreativeContactForm() {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Full Name
                   </label>
                   <input
@@ -123,8 +143,14 @@ export default function CreativeContactForm() {
                     required
                   />
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Email Address
                   </label>
                   <input
@@ -132,14 +158,20 @@ export default function CreativeContactForm() {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                     className="w-full px-4 py-2 bg-white bg-opacity-10 border-spacing-0 border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200"
+                    className="w-full px-4 py-2 bg-white bg-opacity-10 border-spacing-0 border-black rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition duration-200"
                     placeholder="john@example.com"
                     required
                   />
                 </motion.div>
               </div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <label htmlFor="service" className="block text-sm font-medium mb-2">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-medium mb-2"
+                >
                   Service Required
                 </label>
                 <select
@@ -157,8 +189,14 @@ export default function CreativeContactForm() {
                   ))}
                 </select>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Message
                 </label>
                 <textarea
@@ -185,6 +223,5 @@ export default function CreativeContactForm() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

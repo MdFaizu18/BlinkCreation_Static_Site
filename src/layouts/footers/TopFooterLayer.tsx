@@ -1,13 +1,13 @@
 const TopFooterLayer = () => {
   return (
     <div>
-      <div className="pt-24 pb-24 bg-black ">
-        <h2 className="text-[150px] leading-none cursor-pointer font-medium uppercase text-center text-main-color">
-          Let's Connect
+      <div className="pt-24  bg-black ">
+        <h2 className="text-[200px] leading-none cursor-pointer font-normal uppercase text-center text-main-color">
+          Connect & Grow
         </h2>
         <br />
-        <p className="text-lg text-center text-main-color">
-          We turn your ideas into reality—connect with us today!
+        <p className="text-4xl text-center text-main-color uppercase">
+          together with
         </p>
       </div>
     </div>

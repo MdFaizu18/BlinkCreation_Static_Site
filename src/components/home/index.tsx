@@ -1,4 +1,3 @@
-
 import HeroArea from "./HeroArea";
 import ServiceArea from "./ServiceArea";
 import ContactArea from "./ContactArea";
@@ -16,19 +15,28 @@ import NewTestimonial from "./NewTestimonial";
 export default function Home() {
   return (
     <>
-      <HeaderOne />      
+      <HeaderOne />
       <main>
         <HeroArea />
         <AboutArea />
         <ReachUsOut />
         <ServiceArea />
         <StudentLayer />
-        <NewTestimonial/>
+        <NewTestimonial />
         {/* <TestimonoalArea/> */}
-        <TopFooterLayer />
         <ContactArea />
+   <div
+  onClick={() =>
+    (window.location.href =
+      "https://mail.google.com/mail/?view=cm&fs=1&to=blinkcreationsofficial@gmail.com","_blank")
+  }
+  style={{ cursor: "pointer" }}
+>
+  <TopFooterLayer />
+</div>
+
+          <FooterOne />
       </main>
-      <FooterOne />
 
       <ScrollToTop />
       <ScrollTop />

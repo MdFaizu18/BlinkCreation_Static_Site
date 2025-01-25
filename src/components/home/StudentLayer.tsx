@@ -9,7 +9,6 @@ export default function StudentLayer() {
   const controls = useAnimation();
   const sectionRef = useRef<HTMLDivElement>(null);
 
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -53,7 +52,7 @@ export default function StudentLayer() {
             }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-               {/* <span className="inline-block px-4 py-2 mb-8 rounded-full text-sm font-medium bg-black text-white">
+            {/* <span className="inline-block px-4 py-2 mb-8 rounded-full text-sm font-medium bg-black text-white">
               - CAREER KICKSTART -
             </span> */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase text-black leading-tight mb-8">
@@ -65,10 +64,7 @@ export default function StudentLayer() {
               comprehensive documentation, polished portfolios, and interview
               preparation — we’ve got you covered at every step of your journey.
             </p>
-            <Link
-              className="theme-btn"
-              to="/student-hub"
-            >
+            <Link className="theme-btn" to="/student-hub">
               Get Started Today
             </Link>
           </motion.div>
@@ -84,7 +80,7 @@ export default function StudentLayer() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="w-[35%]"
           >
-            <img 
+            <img
               src={StdImg}
               alt="Business professional"
               className="w-[100%] h-[500px] object-cover object-center "

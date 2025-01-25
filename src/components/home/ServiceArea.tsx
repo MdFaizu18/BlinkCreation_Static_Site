@@ -91,7 +91,7 @@ export default function ServiceArea() {
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6">
               {services[0].icon}
             </div>
-            <h3 className="text-xl font-medium uppercase text-white mb-4">
+            <h3 className="text-3xl font-medium uppercase text-white mb-4">
               {services[0].title}
             </h3>
             <p className="text-white">{services[0].description}</p>
@@ -132,7 +132,7 @@ export default function ServiceArea() {
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-medium uppercase text-white mb-4">
+              <h3 className="text-3xl font-medium uppercase text-white mb-4">
                 {service.title}
               </h3>
               <p className="text-white">{service.description}</p>

@@ -6,7 +6,9 @@ export default function TestimonoalArea() {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="">
-                <h2 className="font-medium text-black text-6xl py-12 uppercase">Testinomials</h2>
+                <h2 className="font-medium text-black text-6xl py-12 uppercase">
+                  Testinomials
+                </h2>
               </div>
             </div>
           </div>

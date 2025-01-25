@@ -16,7 +16,7 @@ export default function AboutArea2() {
             />
           </div>
           <div className="order-1 lg:order-2">
-           <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-gray-100 text-gray-900">
+            <span className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-medium bg-gray-100 text-gray-900">
               - ABOUT OUR COMPANY -
             </span>
             <h1
