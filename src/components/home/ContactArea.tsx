@@ -3,13 +3,7 @@
 import type React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Send,
-  Phone,
-  Mail,
-  MapPin,
-  Linkedin,
-} from "lucide-react";
+import { Send, Phone, Mail, MapPin, Linkedin } from "lucide-react";
 import { Instagram } from "lucide-react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 const services = [
@@ -81,7 +75,7 @@ export default function CreativeContactForm() {
               <h2 className="text-xl font-semibold mb-4 text-black">
                 Connect with Us
               </h2>
-              <div className="flex space-x-4">        
+              <div className="flex space-x-4">
                 <motion.a
                   href="https://linkedin.com"
                   target="_blank"
@@ -92,7 +86,7 @@ export default function CreativeContactForm() {
                   <Linkedin className="w-6 h-6" />
                 </motion.a>
                 <motion.a
-                 href="https://instagram.com" 
+                  href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
@@ -101,14 +95,14 @@ export default function CreativeContactForm() {
                   <Instagram className="w-6 h-6" />
                 </motion.a>
                 <motion.a
-                 href="https://instagram.com" 
+                  href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <WhatsAppIcon className="w-6 h-6" />
-                </motion.a>           
+                </motion.a>
               </div>
             </div>
           </motion.div>

@@ -2655,7 +2655,7 @@ body.loaded {
 }
 
 /* ===== # Magic Cursor ===== */
-#magic-cursor {
+/* #magic-cursor {
   position: absolute;
   left: 0;
   top: 0;
@@ -2665,8 +2665,8 @@ body.loaded {
   z-index: 10000;
   -webkit-transition: opacity 0.2s ease-in-out 0.5s;
   transition: opacity 0.2s ease-in-out 0.5s;
-}
-
+} */
+/* 
 #ball {
   position: fixed;
   width: 40px;
@@ -2677,8 +2677,7 @@ body.loaded {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   box-sizing: border-box;
-  /* -webkit-transform: scale(0.5);
-    transform: scale(0.5); */
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2689,13 +2688,12 @@ body.loaded {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  /* -webkit-transition: 0.2s;
-    transition: 0.2s; */
+
   margin-left: -20px;
   margin-top: -20px;
-}
+} */
 
-.magic-cursor.cursor-hover {
+/* .magic-cursor.cursor-hover {
   margin-left: -40px;
   margin-top: -40px;
   width: 80px;
@@ -2703,14 +2701,14 @@ body.loaded {
   background-color: #cc0000;
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-}
+} */
 
-#ball.hovered {
+/* #ball.hovered {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
   opacity: 0 !important;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-}
+} */
 
 /*
 * ----------------------------------------------------------------------------------------

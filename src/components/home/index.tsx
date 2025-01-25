@@ -25,17 +25,18 @@ export default function Home() {
         <NewTestimonial />
         {/* <TestimonoalArea/> */}
         <ContactArea />
-   <div
-  onClick={() =>
-    (window.location.href =
-      "https://mail.google.com/mail/?view=cm&fs=1&to=blinkcreationsofficial@gmail.com","_blank")
-  }
-  style={{ cursor: "pointer" }}
->
-  <TopFooterLayer />
-</div>
+        <div
+          onClick={() => (
+            (window.location.href =
+              "https://mail.google.com/mail/?view=cm&fs=1&to=blinkcreationsofficial@gmail.com"),
+            "_blank"
+          )}
+          style={{ cursor: "pointer" }}
+        >
+          <TopFooterLayer />
+        </div>
 
-          <FooterOne />
+        <FooterOne />
       </main>
 
       <ScrollToTop />

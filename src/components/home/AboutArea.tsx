@@ -27,7 +27,12 @@ export default function AboutArea() {
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
-              At Blink Creations, we are dedicated to crafting innovative solutions tailored to your unique needs. As a one-stop destination for all your digital and creative services, our mission is to turn your dreams into reality with dynamic, reliable, and impactful solutions. Our team of experts is committed to delivering exceptional results that exceed your expectations.
+              At Blink Creations, we are dedicated to crafting innovative
+              solutions tailored to your unique needs. As a one-stop destination
+              for all your digital and creative services, our mission is to turn
+              your dreams into reality with dynamic, reliable, and impactful
+              solutions. Our team of experts is committed to delivering
+              exceptional results that exceed your expectations.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center p-8  rounded-lg hover:shadow-lg transition-shadow">
