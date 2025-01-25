@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/home";
 import NotFound from "./layouts/error/NotFound";
-import SplashCursor from "./reactbits/SplashCursor";
 import { AnimatedCursor } from "./reactbits/AnimatedCursor";
 
 const router = createBrowserRouter([
