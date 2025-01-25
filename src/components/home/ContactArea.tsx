@@ -20,7 +20,7 @@ export default function CreativeContactForm() {
   }
 
   return (
-    <section className="min-h-screen bg-[#F4F3EE] text-black flex items-center justify-center p-4">
+    <section id="contact" className="min-h-screen bg-[#F4F3EE] text-black flex items-center justify-center p-4">
       <div className="container mx-28">
         <motion.h1
           className="text-6xl font-medium mb-12  text-black uppercase"

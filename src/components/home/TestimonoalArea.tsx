@@ -2,11 +2,11 @@ export default function TestimonoalArea() {
   return (
     <>
       <section className="testimonials-area">
-        <div className="container">
+        <div className="container px-24">
           <div className="row">
             <div className="col-xl-12 col-lg-12">
-              <div className="section-title section-black-title wow fadeInUp delay-0-2s">
-                <h2>Testinomials</h2>
+              <div className="">
+                <h2 className="font-medium text-black text-6xl py-12 uppercase">Testinomials</h2>
               </div>
             </div>
           </div>
